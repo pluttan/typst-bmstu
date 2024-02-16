@@ -10,7 +10,7 @@
 git clone https://github.com/pluttan/typst-bmstu $HOME/typst-bmstu
 ```
 
-И запустите инсталлятор (установка отличается для разных операционных систем - см. `install.sh`):
+И запустите инсталлятор (установка отличается для разных операционных систем - измените data в `install.sh` в соответствии с [документацией typst](https://github.com/typst/packages?tab=readme-ov-file#local-packages)):
 
 ```bash
 ~/typst-bmstu/install.sh
