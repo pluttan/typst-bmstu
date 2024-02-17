@@ -218,6 +218,14 @@
   )
 }
 
+#let lst = counter("listing")
+
+#let code(data, lang, lable) = {
+  raw(data, lang:lang)
+  lst.step()
+  [Листинг #lst.display() #sym.bar.h _ #lable _]
+}
+
 // Составляет полноценную работу.
 #let student_work(
   title: "",
@@ -242,6 +250,7 @@
     margin: (left: 30mm, right: 15mm, top: 20mm, bottom: 20mm),
   )
   set text(font: "Times New Roman", size: 14pt, lang: "ru")
+ 
   mk_title_page(
     caf_name: caf_name,
     faculty_name: faculty_name,
@@ -259,6 +268,7 @@
   if table_of_contents == true {
     mk_table_of_contents()
   }
+  
   // Покажем основное содержимое работы.
   {
     let indent = 1.25cm
@@ -280,6 +290,14 @@
       it
       par(text(size: 0.35em, h(0.0em)))
     }
+    
+    show raw: box.with(
+      fill: luma(240),
+      inset: (x:6pt, y:0pt),
+      outset: (y:3pt),
+      radius: 4pt,
+    )
+
     content
   }
   if links.len() != 0 {
@@ -316,3 +334,6 @@
     }
   }
 }
+
+
+

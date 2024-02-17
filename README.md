@@ -44,3 +44,17 @@ git clone https://github.com/pluttan/typst-bmstu $HOME/typst-bmstu
 ```
 Скриншот:
 ![Пример](example-report.png)
+
+## Добавленные функции
+### Оформление блоков кода
+Все блоки кода обормляются как тут, в отдельных, скругленных рамках. Добавлен счетчик листингов и автоматическая генерация подписей к ним. Для листингов исползуйте:
+```typst
+code(block_of_code, language, lable)
+```
+Пример:
+```typst
+code(read("lab1.1.asm"), "asm", "lab1.1.asm")
+```
+Скриншот:
+![Пример](example-code.png)
+
