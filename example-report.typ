@@ -36,6 +36,9 @@
 
 #code(read("lab1.1.asm"), "asm", "lab1.1.asm")
 
+#img(image("example-code.png", width: 50%),[пример кода)])
+
+
 // и, соответственно, комментарии
 // #image("filename.jpg", width: 70%)
 

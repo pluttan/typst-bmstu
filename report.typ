@@ -219,11 +219,33 @@
 }
 
 #let lst = counter("listing")
+#let imag = counter("image")
 
 #let code(data, lang, lable) = {
-  raw(data, lang:lang)
-  lst.step()
-  [Листинг #lst.display() #sym.bar.h _ #lable _]
+  align(center)[
+    #raw(data, lang:lang)
+    #lst.step()
+  ]
+  align(center)[ 
+    Листинг #lst.display() #sym.bar.h _ #lable _
+  ]
+}
+
+#let img(data, lable, f:(i)=>{i.display()}) = {
+  align(center)[
+    #data
+    #imag.step()
+  ]
+  align(center)[
+    Рисунок #f(imag) #sym.bar.h _ #lable _
+  ]
+}
+
+#let imgc() = {
+  align(center)[
+    #imag.step()
+    #imag.display()
+  ]
 }
 
 // Составляет полноценную работу.
@@ -290,13 +312,16 @@
       it
       par(text(size: 0.35em, h(0.0em)))
     }
-    
-    show raw: box.with(
-      fill: luma(240),
-      inset: (x:6pt, y:0pt),
-      outset: (y:3pt),
-      radius: 4pt,
-    )
+
+    show raw: it => {
+      box(
+        fill: luma(240),
+        inset: (x:6pt, y:0pt),
+        outset: (y:3pt),
+        radius: 4pt,
+        align(left)[#it]
+      )
+    }
 
     content
   }
