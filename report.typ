@@ -6,6 +6,7 @@
   work_num: "",
   discipline_name: "",
   theme: none,
+  themecol2:"",
   author: (),
   adviser: (),
   city: "",
@@ -32,8 +33,7 @@
       имени Н.Э. Баумана\
       (национальный исследовательский университет)"\
       (МГТУ им. Н.Э. Баумана)
-  ]
-
+    ]
   )
   
   line(length: 100%, stroke:2pt)
@@ -117,7 +117,10 @@
     align(left)[
       #grid(
         columns: 2,
-        align(right)[Название: #h(5pt)], 
+        align(right)[
+          Название: #h(5pt)
+          #(if themecol2 != ""{v(22pt)}) 
+        ], 
         align(left)[
           #set text(weight:"regular")
           #v(2pt)
@@ -125,6 +128,13 @@
           #theme
           #v(-14pt)
           #line(length: 400pt, stroke: 1pt)
+          #(if themecol2 != ""{
+              v(-6pt)
+              h(5pt)
+              themecol2
+              v(-14pt)
+              line(length: 400pt, stroke: 1pt)
+          })
         ]
       ) 
     ]
@@ -257,6 +267,7 @@
   work_num:"",
   discipline_name: "",
   theme: "",
+  themecol2: "",
   author: (),
   adviser: (),
   city: "",
@@ -280,6 +291,7 @@
     work_num: work_num,
     discipline_name: discipline_name,
     theme: theme,
+    themecol2:themecol2,
     author: author,
     adviser: adviser,
     city: city,
@@ -294,13 +306,24 @@
   // Покажем основное содержимое работы.
   {
     let indent = 1.25cm
-    show heading: it => {
+    set heading(numbering: "1.1.")
+    show heading.where(level:1): it => {
       pagebreak()
-      set align(center)
       set text(16pt, hyphenate: false)
       it
       par(text(size: 0.35em, h(0.0em)))
     }
+    show heading.where(level:2): it => {
+      set text(16pt, hyphenate: false)
+      it
+      par(text(size: 0.35em, h(0.0em)))
+    }
+    show heading.where(level:3): it => {
+      set text(14pt, hyphenate: false)
+      it
+      par(text(size: 0.35em, h(0.0em)))
+    }
+
     set par(justify: true, first-line-indent: indent)
     set list(indent: indent)
     show list: it => {
@@ -359,6 +382,3 @@
     }
   }
 }
-
-
-
