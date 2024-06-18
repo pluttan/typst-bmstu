@@ -352,7 +352,7 @@
     pagebreak()
     show heading: set align(center)
     set heading(numbering: none)
-    [= Истоgчники]
+    [= Источники]
     linebreak()
     let src_cntr = counter("source_counter")
     src_cntr.step()
