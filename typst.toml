@@ -1,9 +1,0 @@
-[package]
-name = "bmstu"
-version = "1.0.0"
-entrypoint = "bmstu.typ"
-authors = ["pluttan <https://github.com/pluttan>", "markcda <https://github.com/markcda/>"]
-license = "MIT"
-description = "Template for generate works for bmstu university."
-repository = "https://github.com/pluttan/typst-bmstu"
-keywords = ["bmstu", "study"]

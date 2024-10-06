@@ -1,0 +1,13 @@
+[package]
+name = "bmstu"
+version = "0.1.0"
+entrypoint = "bmstu.typ"
+authors = [
+    "vzalygin <https://github.com/vzalygin",
+    "pluttan <https://github.com/pluttan>", 
+    "markcda <https://github.com/markcda/>",
+]
+license = "MIT"
+description = "A set of components and styles for building student papers according to GOST 7.32-2017"
+repository = "https://github.com/vzalygin/typst-bmstu"
+keywords = ["bmstu", "work", "gost7.32-2017"]
