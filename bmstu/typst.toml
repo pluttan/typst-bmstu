@@ -9,5 +9,5 @@ authors = [
 ]
 license = "MIT"
 description = "A set of components and styles for building student papers according to GOST 7.32-2017"
-repository = "https://github.com/vzalygin/typst-bmstu"
+repository = "https://github.com/pluttan/typst-bmstu"
 keywords = ["bmstu", "work", "gost7.32-2017"]

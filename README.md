@@ -26,3 +26,4 @@ git clone https://github.com/pluttan/typst-bmstu $HOME/typst-bmstu
 - [ ] Config-файл
 - [ ] Титульник для отчетов
 - [ ] Титульник для РПЗ
+- [ ] Список использованной литературы
