@@ -19,3 +19,10 @@ git clone https://github.com/pluttan/typst-bmstu $HOME/typst-bmstu
 ## Пример студенческой работы
 
 `TODO`
+
+## TODO
+
+- [ ] Пример работы
+- [ ] Config-файл
+- [ ] Титульник для отчетов
+- [ ] Титульник для РПЗ

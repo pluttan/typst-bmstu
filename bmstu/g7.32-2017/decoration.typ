@@ -17,7 +17,7 @@
   show heading.where(level:1): it => {
     pagebreak()
     set text(14pt, hyphenate: false)
-    upper[#align(center)[#it.body]]
+    upper[#align(center)[#it]]
     par(text(size: 0.35em, h(0.0em)))
   }
 
