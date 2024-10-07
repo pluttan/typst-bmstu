@@ -3,29 +3,40 @@ SHELL := /bin/bash
 unameOut := $(shell uname -s)
 
 ifeq ($(unameOut),Linux)
-    data := $(HOME)/.local/share
+    dataLib := $(HOME)/.local/share
+    dataConf := $(HOME)/.config
 else ifeq ($(unameOut),Darwin)
-    data := $(HOME)/Library/Application\ Support
+    dataLib := $(HOME)/Library/Application\ Support
+    dataConf := $(HOME)/.config
 else ifeq ($(unameOut),CYGWIN*)
-    data := %APPDATA%
+    dataLib := %APPDATA%
+    dataConf := %APPDATA%
 else ifeq ($(unameOut),MINGW*)
-    data := %APPDATA%
+    dataLib := %APPDATA%
+    dataConf := %APPDATA%
 else ifeq ($(unameOut),MSYS_NT*)
-    data := %APPDATA%
+    dataLib := %APPDATA%
+    dataConf := %APPDATA%
 else
     $(error unknown os)
 endif
 
-data := $(data)/typst/packages/docs
-bmstu_package := $(data)/bmstu/0.1.1
+dataLib := $(dataLib)/typst/packages/docs
+bmstu_package := $(dataLib)/bmstu/0.1.1
 
 .PHONY: all install
 all: install
 
-install: create_dir copy_files
+install: create_dir_lib copy_files create_dir_conf config
 
-create_dir:
+create_dir_lib:
 	@mkdir -p $(bmstu_package)
 
 copy_files:
 	@cp -r $(dir $(lastword $(MAKEFILE_LIST)))bmstu/* $(bmstu_package)
+
+create_dir_conf:
+    @mkdir -p $(dataConf)/typst
+
+config:
+    @ln -s $(bmstu_package)bmstu.config.typ dataConf/typst/

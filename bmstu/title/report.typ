@@ -1,4 +1,5 @@
 #import "utils.typ":*
+#import "../bmstu.config.typ":config
 #let mk_title_report_work(work_type, work_num) = {[
     #v(-40pt)
     #set align(center + horizon)
@@ -73,20 +74,20 @@
 
 // Составляет титульный лист.
 #let title_report(
-  caf_name: "",
-  faculty_name: "",
-  id_study_field: "",
-  study_field: "",
-  work_type: "",
-  work_num: "",
-  discipline_name: "",
-  theme: "",
-  themecol2:"",
-  author: (nwa:"", group:""),
-  adviser: (nwa:""),
-  city: "",
-  date: datetime.today().display("[day].[month].[year]"),
-  year: datetime.today().display("[year]"), 
+  caf_name: config.caf_name,
+  faculty_name: config.faculty_name,
+  id_study_field: config.id_study_field,
+  study_field: config.study_field,
+  work_type: config.work_type,
+  work_num: config.work_num,
+  discipline_name: config.discipline_name,
+  theme: config.theme,
+  themecol2:config.themecol2,
+  author: config.author,
+  adviser: config.adviser,
+  city: config.city,
+  date: config.date,
+  year: config.year, 
 ) = {[
     // #set document(title: theme)
     #set page(margin: (bottom: 10mm))
@@ -149,20 +150,20 @@
 
 
 #let титул_отчета(
-    факультет: "",
-    кафедра: "",
-    код_направления: "",
-    направление: "",
-    дисциплина: "",
-    тип_работы: "",
-    номер_работы: "",
-    название_работы: "",
-    название_работы_кол2:"",
-    автор: (фио:"", группа:""),
-    руководитель: (фио:""),
-    город: "",
-    дата: datetime.today().display("[day].[month].[year]"),
-    год: datetime.today().display("[year]"),
+    кафедра: config.caf_name,
+    факультет: config.faculty_name,
+    код_направления: config.id_study_field,
+    направление: config.study_field,
+    тип_работы: config.work_type,
+    номер_работы: config.work_num,
+    дисциплина: config.discipline_name,
+    название_работы: config.theme,
+    название_работы_кол2:config.themecol2,
+    автор: config.author,
+    руководитель: config.adviser,
+    город: config.city,
+    дата: config.date,
+    год: config.year, 
 ) = {
     title_report(
         caf_name: кафедра,
@@ -183,18 +184,18 @@
 }
 
 #let титул_отчета_иу6(
-    код_направления: "",
-    направление: "",
-    дисциплина: "",
-    тип_работы: "",
-    номер_работы: "",
-    название_работы: "",
-    название_работы_кол2:"",
-    автор: (),
-    руководитель: (),
-    город: "",
-    дата: false,
-    год: datetime.today().display("[year]"),
+    код_направления: config.id_study_field,
+    направление: config.study_field,
+    тип_работы: config.work_type,
+    номер_работы: config.work_num,
+    дисциплина: config.discipline_name,
+    название_работы: config.theme,
+    название_работы_кол2:config.themecol2,
+    автор: config.author,
+    руководитель: config.adviser,
+    город: config.city,
+    дата: config.date,
+    год: config.year, 
 ) = титул_отчета(
     факультет: "Информатика и системы управления",
     кафедра: "Компьютерные системы и сети",
@@ -213,16 +214,16 @@
 )
 
 #let титул_отчета_иу6_ивт(
-    дисциплина: "",
-    тип_работы: "",
-    номер_работы: "",
-    название_работы: "",
-    название_работы_кол2:"",
-    автор: (),
-    руководитель: (),
-    город: "",
-    дата: false,
-    год: datetime.today().display("[year]"), 
+    тип_работы: config.work_type,
+    номер_работы: config.work_num,
+    дисциплина: config.discipline_name,
+    название_работы: config.theme,
+    название_работы_кол2:config.themecol2,
+    автор: config.author,
+    руководитель: config.adviser,
+    город: config.city,
+    дата: config.date,
+    год: config.year, 
 ) = титул_отчета_иу6(
     код_направления: "09.03.01/03",
     направление: "Вычислительные машины, комплексы, системы и сети",

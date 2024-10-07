@@ -32,7 +32,6 @@
 #let mk_title_header_row(name, data, no_upper:false) = {
     if (data != ""){[
         #set text(weight: "regular", size: 11pt)
-        #set text(weight: "regular", size: 11pt)
         #set par(first-line-indent: 0em)
         #set align(left)
         #upper(name)
