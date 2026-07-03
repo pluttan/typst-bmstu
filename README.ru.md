@@ -1,13 +1,9 @@
-![Header](header.png)
-
 <div align="center">
 
 # Typst Libs
 
 **Typst-шаблоны для отчётов МГТУ и ГОСТ 7.32-2017**
 
-[![License](https://img.shields.io/badge/license-MIT-2C2C2C?style=for-the-badge&labelColor=1E1E1E)](LICENSE)
-[![Typst](https://img.shields.io/badge/typst-templates-2C2C2C?style=for-the-badge&logo=typst&labelColor=1E1E1E)]()
 
 </div>
 
@@ -33,7 +29,14 @@
 
 </div>
 
-## ■ Как работает
+## ■ Как это работает
+
+```
+1. Клонировать репозиторий и выполнить `make` — устанавливает шаблоны через симлинки в `~/.config/typst`.
+2. Заполнить общий файл конфигурации: факультет, кафедра и значения автора по умолчанию.
+3. Импортировать нужный шаблон (`typst-bmstu` или `typst-g7.32-2017`) в документ.
+4. Вызвать функцию шаблона с метаданными документа — титульный лист генерируется автоматически.
+```
 
 ## ■ Скриншоты
 
@@ -45,7 +48,7 @@
 
 </div>
 
-## ■ Запуск
+## ■ Использование
 
 ```bash
 git clone https://github.com/pluttan/typst-bmstu
@@ -65,6 +68,6 @@ cd typst-bmstu && make
 )
 ```
 
-## ■ License
+## ■ Лицензия
 
 MIT © [pluttan](https://github.com/pluttan)
